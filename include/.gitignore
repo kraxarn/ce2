@@ -1,0 +1,16 @@
+# Most of these can be removed once the code is cleaned up
+
+allegro5_*/
+Aurora/
+Box2D/
+chipmunk/
+fmt/
+pugixml/
+SFML/
+Thor/
+tmx/
+tmxlite/
+tmxloader/
+
+physfs.h*
+SFML*.hpp
