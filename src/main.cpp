@@ -6,7 +6,7 @@
 #include <SFML/Graphics.hpp>
 
 // Libraries
-#include "fmt/format.h" // ~18 KB
+#include <fmt/format.h>
 
 // Engine
 #include "CrowEngine.hpp"

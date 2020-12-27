@@ -26,7 +26,7 @@ using namespace sf;
 #include "WindowIcon.h"
 
 // For logging useless debug info
-#include "fmt/format.h"
+#include <fmt/format.h>
 #include <SFML/OpenGL.hpp>
 
 // Linux specific
