@@ -24,11 +24,11 @@
 ### All changes
 * FIXED: Added water at the end of the fall in 2-4
 * FIXED: Fixed deadzone not working correctly on the X axis
-* FIXED: Reverted back to the old icon
+* FIXED: Reverted to the old icon
 * FIXED: No longer checks for axis pos if controller isn't connected
 * FIXED: Renamed 'main' submenu to 'home' to avoid issues with main()
 * FIXED: Reworked jumping to be more responsive
-* FIXED: Reverted back to old layout of 2-B
+* FIXED: Reverted to old layout of 2-B
 * ADDED: Animate boss health bar
 * FIXED: No longer assumed item is second fixture
 * FIXED: Fixed rare crash when switching levels
@@ -54,5 +54,5 @@
 * FIXED: Removed logging of some joystick info
 * FIXED: Fixed some wrong tiles in 2-4 and 2-2
 * ADDED: Added a total of 100 coins
-* FIXED: Fixed seeing feet under water
+* FIXED: Fixed seeing feet underwater
 * FIXED: Updated 2-2, 1-1, 2-4, 2-3, 1-B
