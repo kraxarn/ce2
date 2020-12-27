@@ -49,22 +49,18 @@ namespace ce
 
 	void Engine::log(const string message)
 	{
-		//al_append_native_text_log(textLog, (message + "\n").c_str());
-		cout << "MESSAGE: " << message << endl;
+		cout << "[INFO] " << message << endl;
 	}
 
 	void Engine::error(const string message)
 	{
-		//al_show_native_message_box(nullptr, "Error", message.c_str(), "", nullptr, ALLEGRO_MESSAGEBOX_ERROR);
-        cout << "ERROR: " << message << endl;
+        cout << "[ERR ] " << message << endl;
 		exit(-1);
 	}
 
 	void Engine::warning(const string message)
 	{
-		// TODO: Test this on other OSes
-	    //al_show_native_message_box(nullptr, "Warning", message.c_str(), nullptr, nullptr, ALLEGRO_MESSAGEBOX_WARN);
-        cout << "WARNING: " << message << endl;
+        cout << "[WARN] " << message << endl;
 	}
 
 	void Engine::dev(const string message)
