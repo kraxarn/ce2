@@ -130,7 +130,7 @@ namespace ce
 		/// @param fps Framerate limit
 		Window(const VideoMode videoMode, const Vector2f virtualRes, const int fps)
 		{
-			window.create(videoMode, GameName, Style::None);
+			window.create(videoMode, GameName, Style::Titlebar | Style::Close);
 			window.setFramerateLimit(fps);
 			//window.setVerticalSyncEnabled(true);
 			view.reset(FloatRect(0, 0, virtualRes.x, virtualRes.y));
