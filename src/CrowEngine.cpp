@@ -67,6 +67,11 @@ namespace ce
         cout << "WARNING: " << message << endl;
 	}
 
+	void Engine::dev(const string message)
+	{
+		cout << "[DEV ] " << message << endl;
+	}
+
 	string Engine::getWritePath(const string file)
 	{
 		#if defined CE_WINDOWS

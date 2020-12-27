@@ -103,6 +103,8 @@ namespace ce
 		/// @param message Message to show
 		static void warning(string message);
 
+		static void dev(string message);
+
 		/// @brief Gets the path to a writable directory
 		/// @param file Optional file to concatenate
 		static string getWritePath(string file);
