@@ -39,9 +39,11 @@ namespace ce
 		if (devMode)
 		{
 			// This assumes we have already created a window
-			log("Engine is running in developer mode");
-			log(fmt::format("Using {} {}", glGetString(GL_VENDOR), glGetString(GL_RENDERER)));
-			log(fmt::format("Using OpenGL {}", glGetString(GL_VERSION)));
+			dev("Engine is running in developer mode");
+#ifdef CE_DEBUG
+			dev(fmt::format("Using {} {}", glGetString(GL_VENDOR), glGetString(GL_RENDERER)));
+			dev(fmt::format("Using OpenGL {}", glGetString(GL_VERSION)));
+#endif
 		}
 	}
 

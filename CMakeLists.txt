@@ -26,6 +26,13 @@ add_executable(CrowEngine
 		src/CrowEngine.cpp
 		src/main.cpp)
 
+# Debug mode logs OpenGL information
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+	find_package(OpenGL REQUIRED)
+	target_link_libraries(CrowEngine GL)
+	target_compile_definitions(CrowEngine PRIVATE CE_DEBUG)
+endif ()
+
 # Libraries
 target_link_libraries(CrowEngine
 		sfml-system

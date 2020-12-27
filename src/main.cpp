@@ -52,9 +52,13 @@ int main(int argc, char *argv[])
 	#pragma endregion
 
 	#pragma region Developer mode
-	// Force debug mode with shift
+	// Force debug mode in debug or with shift
+#ifdef CE_DEBUG
+	game.devMode = true;
+#else
 	if (Keyboard::isKeyPressed(Keyboard::LShift))
 		game.devMode = true;
+#endif
 	#pragma endregion
 
 	#pragma region Engine init

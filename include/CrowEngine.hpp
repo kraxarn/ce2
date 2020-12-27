@@ -29,10 +29,9 @@ using namespace sf;
 
 // For logging useless debug info
 #include <fmt/format.h>
+#ifdef CE_DEBUG
 #include <SFML/OpenGL.hpp>
-
-// Linux specific
-#include <sys/stat.h>
+#endif
 
 namespace ce
 {
