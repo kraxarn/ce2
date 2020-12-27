@@ -235,7 +235,7 @@ namespace ce
 		    // Maybe?
 		    random_device random;
 		    mt19937 rng(random());
-		    uniform_int_distribution<mt19937::result_type> dist((ulong) min, (ulong) max);
+		    uniform_int_distribution<mt19937::result_type> dist((unsigned long) min, (unsigned long) max);
 		    return (int) dist(rng);
 		}
 
