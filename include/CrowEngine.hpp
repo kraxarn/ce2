@@ -18,7 +18,7 @@ using namespace sf;
 
 #include <box2d/box2d.h>
 
-#include "physfs.h"
+#include <physfs.h>
 
 // Our other engine files
 #include "FileStream.hpp"
