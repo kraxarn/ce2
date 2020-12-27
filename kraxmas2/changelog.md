@@ -1,9 +1,10 @@
 ## Final
 
+### Highlights
 * Updated the last stage
 * Minor fixes
 
-
+### All changes
 * FIXED: Updated spikes on 2-4
 * FIXED: Fixed water tiles not being affected by darkness
 * FIXED: Fixed 20px line not being covered when transitioning from level
@@ -13,13 +14,14 @@
 
 ## RC 3
 
+### Highlights
 * Remade and much improved jumping
 * Updated various levels
 * Minor controller fixes
 * Fixed rare crash when switching levels
 * Minor fixes
 
-
+### All changes
 * FIXED: Added water at the end of the fall in 2-4
 * FIXED: Fixed deadzone not working correctly on the X axis
 * FIXED: Reverted back to the old icon
@@ -34,13 +36,14 @@
 
 ## RC 2
 
+### Highlights
 * Controller support
 * Cleaned up boss sprite
 * Added a total of 100 coins
 * Updated various levels
 * Minor fixes
 
-
+### All changes
 * ADDED: Controller support
 * FIXED: Removed debug text in submenu
 * FIXED: Removed key rebinding options
