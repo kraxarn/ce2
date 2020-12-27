@@ -14,7 +14,7 @@ using namespace sf;
 #include <allegro5/allegro_acodec.h>
 #include <allegro5/allegro_physfs.h>
 
-#include "Box2D/Box2D.h"
+#include <box2d/box2d.h>
 
 #include "physfs.h"
 
@@ -581,12 +581,12 @@ namespace ce
 			return true;
 		}
 
-		void createEdgeShape(const b2Vec2 v1, const b2Vec2 v2, const uint16 categoryBits, const uint16 maskBits, const float32 friction, const bool isSensor) const
+		void createEdgeShape(const b2Vec2 v1, const b2Vec2 v2, const uint16 categoryBits, const uint16 maskBits, const float friction, const bool isSensor) const
 		{
 			b2EdgeShape  shape;
 			b2FixtureDef fixture;
 
-			shape.Set(v1, v2);
+			shape.SetTwoSided(v1, v2);
 			fixture.shape = &shape;
 			fixture.filter.categoryBits = categoryBits;
 			fixture.filter.maskBits = maskBits;

@@ -9,7 +9,7 @@
 #include <iostream>
 #include <chrono>
 
-#include <Box2D/Dynamics/b2World.h>
+#include <box2d/b2_world.h>
 
 using namespace std;
 using namespace chrono;
@@ -778,7 +778,7 @@ public:
 						fixtureDef.shape = &shape;
 						fixtureDef.filter.categoryBits = BitPlatform;
 						fixtureDef.isSensor = false;
-						fixtureDef.userData = nullptr;
+						fixtureDef.userData.pointer = 0;
 						//fixtureDef.density = 0; // ?
 						body->CreateFixture(&fixtureDef);
 					}
@@ -860,12 +860,12 @@ public:
 						if (tile == 52)
 						{
 							cItems.push_back(CollectableItem(coin, x, y));
-							fixtureDef.userData = reinterpret_cast<int*>(cItems.size());
+							fixtureDef.userData.pointer = reinterpret_cast<uintptr_t>(cItems.size());
 						}
 						else if (tile == 53)
 						{
 							cItems.push_back(CollectableItem(objective, x, y));
-							fixtureDef.userData = reinterpret_cast<int*>(cItems.size());
+							fixtureDef.userData.pointer = reinterpret_cast<uintptr_t>(cItems.size());
 						}
 
 						body->CreateFixture(&fixtureDef);
@@ -1071,7 +1071,7 @@ inline void ContactListener::BeginContact(b2Contact* contact)
 		case BitPlayer     | BitCoin:
 		case BitPlayerHead | BitCoin:
 			// Player collected coin or present
-			index = *reinterpret_cast<int*>(fixtureItem->GetUserData()) - 1; // Don't assume it's b
+			index = reinterpret_cast<uintptr_t>(fixtureItem->GetUserData().pointer) - 1; // Don't assume it's b
 			collected = &cItems.at(index);
 			if (!collected->collected)
 			{
