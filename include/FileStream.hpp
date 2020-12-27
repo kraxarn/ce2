@@ -48,7 +48,7 @@ namespace ce
 			// PHYSFS_read returns the number of 'objects' read or -1 on error.
 			// We assume our objects are single bytes and request to read size
 			// amount of them.
-			return PHYSFS_read(file, data, 1, static_cast<PHYSFS_uint32>(size));
+			return PHYSFS_readBytes(file, data, static_cast<PHYSFS_uint32>(size));
 		}
 
 		sf::Int64 seek(const sf::Int64 position) override
