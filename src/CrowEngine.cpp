@@ -25,7 +25,7 @@ namespace ce
 		//	textLog = al_open_native_text_log("CrowEngine2 Log", ALLEGRO_TEXTLOG_NO_CLOSE | ALLEGRO_TEXTLOG_MONOSPACE);
 
 		// Create config dir
-		mkdir(getWritePath("").c_str(), 0700);
+		filesystem::create_directories(getWritePath(""));
 
 		// PhysFS
 		if (!PHYSFS_init(nullptr))

@@ -3,6 +3,8 @@
 #include <iostream>
 #include <fstream>
 #include <random>
+#include <filesystem>
+
 class SceneHUD;
 using namespace std;
 
