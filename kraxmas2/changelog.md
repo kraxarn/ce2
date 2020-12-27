@@ -3,6 +3,7 @@
 * Updated the last stage
 * Minor fixes
 
+
 * FIXED: Updated spikes on 2-4
 * FIXED: Fixed water tiles not being affected by darkness
 * FIXED: Fixed 20px line not being covered when transitioning from level
@@ -17,6 +18,7 @@
 * Minor controller fixes
 * Fixed rare crash when switching levels
 * Minor fixes
+
 
 * FIXED: Added water at the end of the fall in 2-4
 * FIXED: Fixed deadzone not working correctly on the X axis
@@ -37,6 +39,7 @@
 * Added a total of 100 coins
 * Updated various levels
 * Minor fixes
+
 
 * ADDED: Controller support
 * FIXED: Removed debug text in submenu
