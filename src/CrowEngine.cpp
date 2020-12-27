@@ -76,7 +76,7 @@ namespace ce
 			_mkdir(fmt::format("{}\\CrowGames", buf).c_str()); // Just to be sure and to fix some bugs
 			return fmt::format("{}\\CrowGames\\{}\\{}", buf, ProjectName, file);
 		#elif defined CE_LINUX
-			return fmt::format("~/.config/CrowGames/{}/{}", ProjectName, file);
+			return fmt::format("{}/.config/CrowGames/{}/{}", getenv("HOME"), ProjectName, file);
         #else
 			return "/";
 		#endif
