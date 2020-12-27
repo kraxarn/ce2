@@ -4,17 +4,34 @@ project(CrowEngine)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(include)
-link_directories(lib)
 
-# Static linking is currently not supported
-#add_compile_definitions(SFML_STATIC)
-#add_compile_definitions(ALLEGRO_STATICLINK)
+# pkg-config for some dependencies
+find_package(PkgConfig REQUIRED)
 
-set(LIBS "-lsfml-graphics -lsfml-window -lsfml-system -lallegro_acodec -lallegro_audio -lallegro_physfs -lallegro -lfreetype -lGL -lGLU -ldumb -lm -lpulse-simple -lpulse -lasound -lphysfs -lpthread -lbox2d -lfmt")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${LIBS} -Werror ")
+# SFML
+find_package(SFML 2 COMPONENTS system window graphics REQUIRED)
+# Allegro (pkg-config)
+pkg_check_modules(allegro REQUIRED allegro-5 allegro_physfs-5 allegro_audio-5 allegro_acodec-5)
+# Box2D
+find_package(box2d REQUIRED)
+# fmt
+find_package(fmt REQUIRED)
+# PhysFS
+pkg_check_modules(PhysicsFS REQUIRED physfs)
 
+# Source files
 add_executable(CrowEngine
 		src/AnimatedSprite.cpp
 		src/Animation.cpp
 		src/CrowEngine.cpp
 		src/main.cpp)
+
+# Libraries
+target_link_libraries(CrowEngine
+		sfml-system
+		sfml-window
+		sfml-graphics
+		box2d
+		fmt
+		${allegro_LIBRARIES}
+		${PhysicsFS_LIBRARIES})
