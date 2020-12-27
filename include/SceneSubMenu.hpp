@@ -38,7 +38,7 @@ class SceneSubMenu : public Scene
 	int curMusic = 0, curSound = 0;
 
 	string musicName[6] = { "World 1",   "World 2",   "Boss",    "Menu",    "Credits"    };
-	char* musicFile[6]  = { "level1.it", "level2.it", "boss.xm", "menu.xm", "credits.it" };
+	string musicFile[6]  = { "level1.it", "level2.it", "boss.xm", "menu.xm", "credits.it" };
 
 	string soundName[6] = { "Boss taking damage", "Coin collected", "Level complete", "Taking damage", "Jump", "Present collected" };
 
