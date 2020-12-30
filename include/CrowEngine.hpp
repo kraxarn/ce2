@@ -483,12 +483,14 @@ namespace ce
 		}
 		string getPositionString() const
 		{
-			return fmt::format("{:.0f} {:.0f}", position.x, position.y);
+			return fmt::format("X={:.0f} Y={:.0f} (BX={:.0f} BY={:.0f})", position.x, position.y,
+				body->GetPosition().x, body->GetPosition().y);
 		}
 
 		string getSpeedString() const
 		{
-			return fmt::format("{:.0f} {:.0f}", body->GetLinearVelocity().x * PixelsPerMeter, body->GetLinearVelocity().y * PixelsPerMeter);
+			return fmt::format("X={:.0f} Y={:.0f}", body->GetLinearVelocity().x * PixelsPerMeter,
+				body->GetLinearVelocity().y * PixelsPerMeter);
 		}
 		b2Vec2 getVelocity() const
 		{

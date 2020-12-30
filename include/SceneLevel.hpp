@@ -391,7 +391,13 @@ public:
 		if (game->devMode)
 		{
 			textInfo.setPosition(viewRoot.x + 16, viewRoot.y + 16);
-			textInfo.setString(fmt::format("FPS: {}\nState: {}\nGrounded: {}\nPos: {}\nView: {:.0f} {:.0f}\nSpeed: {}\nTimer: {:.1f} \nDarkness: {:.1f}%\nDirection: {}\nSpeed: {:.1f}x\nTouching roof: {}", fps, player->getNameOfState(), player->getGroundedString(), player->getPositionString(), view->getCenter().x, view->getCenter().y, player->getSpeedString(), timer.getTimeSeconds(), (timer.getTimeSeconds() * 0.425) / 255 * 100, player->runningRight() ? "right" : "left", speedMulti, player->getTouchingRoofString()));
+			textInfo.setString(fmt::format("FPS: {}\nState: {}\nGrounded: {}\nPos: {}\nView: X={:.0f} Y={:.0f}\nSpeed: {}\nTimer: {:.1f}\nDarkness: {:.1f}%\nDirection: {}\nSpeed: {:.1f}x\nTouching roof: {}\nBodies: {}\nContacts: {}\nGravity: {} {}\nViewport: L={} T={} W={} H={}",
+				fps, player->getNameOfState(), player->getGroundedString(), player->getPositionString(),
+				view->getCenter().x, view->getCenter().y, player->getSpeedString(), timer.getTimeSeconds(),
+				(timer.getTimeSeconds() * 0.425) / 255 * 100, player->runningRight() ? "right" : "left", speedMulti,
+				player->getTouchingRoofString(), world->GetBodyCount(), world->GetContactCount(),
+				world->GetGravity().x, world->GetGravity().y, view->getViewport().left, view->getViewport().top,
+				view->getViewport().width, view->getViewport().height));
 		}
 		#pragma endregion
 
