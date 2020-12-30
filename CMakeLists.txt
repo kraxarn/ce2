@@ -4,7 +4,7 @@ project(CrowEngine)
 set(CMAKE_CXX_STANDARD 17)
 
 # Allow using system libraries
-set(USE_SYSTEM_LIBS ON)
+set(USE_SYSTEM_LIBS OFF)
 if (USE_SYSTEM_LIBS)
 	message(STATUS "Using system libraries")
 elseif (NOT USE_SYSTEM_LIBS)
@@ -82,8 +82,11 @@ else ()
 			pulse
 			asound
 			# allegro_acodec static dependencies
-			dumb
+			dumb-static
 			m
+			Xcursor
+			Xi
+			Xpm
 			# sfml
 			sfml-system-s
 			sfml-window-s
@@ -91,7 +94,7 @@ else ()
 			# Box2D
 			Box2D
 			# fmt
-			fmt
+			fmt-static
 			# allegro
 			allegro-static
 			allegro_main-static
@@ -99,5 +102,5 @@ else ()
 			allegro_audio-static
 			allegro_physfs-static
 			# physfs
-			physfs)
+			physfs-static)
 endif ()

@@ -12,13 +12,13 @@ using namespace std;
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
-#include <allegro5/allegro_audio.h>
-#include <allegro5/allegro_acodec.h>
-#include <allegro5/allegro_physfs.h>
+#include "allegro5/allegro_audio.h"
+#include "allegro5/allegro_acodec.h"
+#include "allegro5/allegro_physfs.h"
 
 #include "Box2D/Box2D.h"
 
-#include <physfs.h>
+#include "physfs.h"
 
 // Our other engine files
 #include "FileStream.hpp"
