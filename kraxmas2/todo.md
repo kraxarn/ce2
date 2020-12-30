@@ -9,8 +9,7 @@
 * Probably fix level memory leak by not using 'new' for scenes
 * 2 sound mixers, one for music, one for sfx?
 * BUG: Always use sizeof() since sizeof is VS exclusive
-
-
+*
 * MAYBE: If completed game and resuming, just show end screen
 * MAYBE: Add option to change used controller
 * MAYBE: Fix always ducking with mega drive controller (Can this be fixed?)
@@ -24,8 +23,7 @@
 * SceneLevel - Clean
 * SceneMenu - Clean
 * SceneSubMenu - Cleaned
-
-
+*
 * Clean: Not cleaned yet
 * Cleaned: Unused vars cleaned
 * Good: Unused cars, unused code and todos cleaned
