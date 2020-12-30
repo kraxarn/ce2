@@ -1,8 +1,0 @@
-# Most of these can be removed once the code is cleaned up
-
-fmt/
-thor/
-tmxlite/
-tmxloader/
-
-physfs.cpp
