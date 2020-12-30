@@ -16,7 +16,7 @@ using namespace sf;
 #include <allegro5/allegro_acodec.h>
 #include <allegro5/allegro_physfs.h>
 
-#include <box2d/box2d.h>
+#include "Box2D/Box2D.h"
 
 #include <physfs.h>
 
@@ -589,7 +589,7 @@ namespace ce
 			b2EdgeShape  shape;
 			b2FixtureDef fixture;
 
-			shape.SetTwoSided(v1, v2);
+			shape.Set(v1, v2);
 			fixture.shape = &shape;
 			fixture.filter.categoryBits = categoryBits;
 			fixture.filter.maskBits = maskBits;

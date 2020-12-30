@@ -778,7 +778,7 @@ public:
 						fixtureDef.shape = &shape;
 						fixtureDef.filter.categoryBits = BitPlatform;
 						fixtureDef.isSensor = false;
-						fixtureDef.userData.pointer = 0;
+						fixtureDef.userData = nullptr;
 						//fixtureDef.density = 0; // ?
 						body->CreateFixture(&fixtureDef);
 					}
