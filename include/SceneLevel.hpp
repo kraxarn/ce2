@@ -43,7 +43,7 @@ public:
 	}
 };
 // Collectable items
-vector<CollectableItem> cItems;
+vector<shared_ptr<CollectableItem>> cItems;
 #pragma endregion
 
 class ForegroundTile
@@ -514,13 +514,13 @@ public:
 				}
 			}
 		// Draw coins and stuff
-		for (auto const& citem : cItems)
+		for (auto const& cItem : cItems)
 		{
 			// Only draw if not collected
-			if (!citem.collected)
+			if (!cItem->collected)
 			{
-				items[citem.tileID].setPosition(citem.getPosition());
-				window->draw(items[citem.tileID], getShader());
+				items[cItem->tileID].setPosition(cItem->getPosition());
+				window->draw(items[cItem->tileID], getShader());
 			}
 		}
 		#pragma endregion
@@ -705,7 +705,7 @@ public:
 		}
 
 		window->draw(rectTrans);
-		#pragma endregion 
+		#pragma endregion
 
 		#pragma region Calculate FPS
 		// Less accurate, but easier to look at
@@ -859,13 +859,15 @@ public:
 						// See if we need to add it to cItems
 						if (tile == 52)
 						{
-							cItems.push_back(CollectableItem(coin, x, y));
-							fixtureDef.userData.pointer = reinterpret_cast<uintptr_t>(cItems.size());
+							auto item = make_shared<CollectableItem>(coin, x, y);
+							fixtureDef.userData = item.get();
+							cItems.push_back(item);
 						}
 						else if (tile == 53)
 						{
-							cItems.push_back(CollectableItem(objective, x, y));
-							fixtureDef.userData.pointer = reinterpret_cast<uintptr_t>(cItems.size());
+							auto item = make_shared<CollectableItem>(objective, x, y);
+							fixtureDef.userData = item.get();
+							cItems.push_back(item);
 						}
 
 						body->CreateFixture(&fixtureDef);
@@ -1062,7 +1064,6 @@ inline void ContactListener::BeginContact(b2Contact* contact)
 		fixtureItem = b;
 
 	// Just so it compiles
-	auto             index     = -1;
 	CollectableItem* collected = nullptr;
 	Boss*            boss      = nullptr;
 
@@ -1071,8 +1072,7 @@ inline void ContactListener::BeginContact(b2Contact* contact)
 		case BitPlayer     | BitCoin:
 		case BitPlayerHead | BitCoin:
 			// Player collected coin or present
-			index = reinterpret_cast<uintptr_t>(fixtureItem->GetUserData().pointer) - 1; // Don't assume it's b
-			collected = &cItems.at(index);
+			collected = static_cast<CollectableItem*>(fixtureItem->GetUserData());
 			if (!collected->collected)
 			{
 				collected->collected = true;
