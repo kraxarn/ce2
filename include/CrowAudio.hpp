@@ -9,15 +9,18 @@ class Audio
 	ALLEGRO_AUDIO_STREAM *music;
 
 	string currentMusic;
-	float  musicVolume;
-	float  soundVolume;
+	float musicVolume;
+	float soundVolume;
 
-	ALLEGRO_SAMPLE          *samples[6];
+	ALLEGRO_SAMPLE *samples[6];
 	ALLEGRO_SAMPLE_INSTANCE *sampleInstances[6];
 
-	string soundFiles[6] = { "boss", "coin", "complete", "fall", "jump", "present" };
+	string soundFiles[6] = {"boss", "coin", "complete", "fall", "jump", "present"};
 public:
-	enum SoundFile { boss, coin, complete, fall, jump, present };
+	enum SoundFile
+	{
+		boss, coin, complete, fall, jump, present
+	};
 
 	Audio(const float musicVolume, const float soundVolume)
 	{
@@ -48,7 +51,7 @@ public:
 	/// @brief Plays and loops file in music folder
 	/// @return If loading was successfull
 	/// @param file File to load
-	bool playMusic(const char* file)
+	bool playMusic(const char *file)
 	{
 		if (currentMusic == string(file))
 			return true;
@@ -118,7 +121,7 @@ public:
 		if (music)
 			al_set_audio_stream_gain(music, (musicVolume / 100) * amount);
 	}
-	
+
 	int getMusicLength() const
 	{
 		if (music)
