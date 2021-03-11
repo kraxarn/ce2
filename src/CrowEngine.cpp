@@ -17,12 +17,6 @@ namespace ce
 			error("Error installing audio codecs");
 		if (!al_reserve_samples(1))
 			error("Error reserving audio samples");
-		//al_init_native_dialog_addon();
-
-		// Load text log
-		// Change for release
-		//if (devMode || Keyboard::isKeyPressed(Keyboard::LControl))
-		//	textLog = al_open_native_text_log("CrowEngine2 Log", ALLEGRO_TEXTLOG_NO_CLOSE | ALLEGRO_TEXTLOG_MONOSPACE);
 
 		// Create config dir
 		filesystem::create_directories(getWritePath(""));
