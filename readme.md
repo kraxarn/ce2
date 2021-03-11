@@ -1,14 +1,11 @@
-# CrowEngine 2 / KraXmas 2
-This is the source code for the 2017 version of the custom CrowEngine game engine, used in the 
-[KraXmas 2](https://kraxarn.itch.io/kraxmas2) game. Keep in mind that this is currently old code, and probably doesn't 
-compile anymore. Hopefully this can be the base for the new re-release of the game with cross-platform support, 
-scheduled for release during winter 2022.
+# CrowEngine v3
+Version 3 of my custom game engine built on top of SDL2, using C++11. Currently, very early in
+development and not quite ready for use in production just yet.
+
+Check out the [v2](https://github.com/kraxarn/crowengine/tree/v2) branch for the old version based
+on SFML/Allegro, no longer maintained or developed.
 
 ## External dependencies
 External dependencies required to build/run the engine:
-* [SFML](https://github.com/SFML/SFML)
-* [allegro5](https://github.com/liballeg/allegro5)
-* [dumb](https://github.com/kode54/dumb)
-* [physfs](https://hg.icculus.org/icculus/physfs/)
-* [box2d](https://github.com/erincatto/box2d)
-* [fmt](https://github.com/fmtlib/fmt)
+* [SDL2](https://github.com/libsdl-org/SDL)
+* [SDL2_ttf](https://github.com/libsdl-org/SDL_ttf)
