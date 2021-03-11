@@ -38,6 +38,15 @@ public:
 		loadSounds();
 	}
 
+	~Audio()
+	{
+		for (auto sampleInstance : sampleInstances)
+			al_destroy_sample_instance(sampleInstance);
+
+		for (auto sample : samples)
+			al_destroy_sample(sample);
+	}
+
 	void loadSounds()
 	{
 		for (auto i = 0; i < 6; i++)
