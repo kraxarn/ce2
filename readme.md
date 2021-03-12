@@ -19,7 +19,7 @@ the library. Here are some differences:
 
 So why use something like this over SFML? Portability of SDL I guess.
 
-## External dependencies
-External dependencies required to build/run the engine:
+## Third-party dependencies
+Third-party dependencies required to build/run the engine (included in the thirdparty directory):
 * [SDL2](https://github.com/libsdl-org/SDL)
 * [SDL2_ttf](https://github.com/libsdl-org/SDL_ttf)
