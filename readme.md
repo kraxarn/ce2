@@ -1,4 +1,4 @@
-# CrowEngine v3
+# CrowEngine v3 (pre-alpha)
 Version 3 of my custom game engine built on top of SDL2, using C++11. Currently, very early in
 development and not quite ready for use in production just yet.
 
