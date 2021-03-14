@@ -26,7 +26,7 @@ namespace ce
 
 		/**
 		 * Destroy the font and free resources
-		 * @note Does not free any texts that may still use the font
+		 * @note Texts using the font can still be used, but not updated
 		 */
 		~font();
 
