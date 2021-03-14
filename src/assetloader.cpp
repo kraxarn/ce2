@@ -5,5 +5,5 @@ using namespace ce;
 
 font asset_loader::get_font(const std::string &name, int size)
 {
-	return font(load(fmt::format("font/{}", name)), size);
+	return font(load(fmt::format("fonts/{}", name)), size);
 }
