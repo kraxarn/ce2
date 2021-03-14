@@ -15,3 +15,9 @@ ce::font::font(const std::vector<uint8_t> &data, int size)
 	if (ttf_font == nullptr)
 		throw std::runtime_error(TTF_GetError());
 }
+
+ce::font::~font()
+{
+	if (ttf_font != nullptr)
+		TTF_CloseFont(ttf_font);
+}

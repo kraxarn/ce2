@@ -20,6 +20,12 @@ namespace ce
 		 */
 		explicit font(const std::vector<uint8_t> &data, int size);
 
+		/**
+		 * Destroy the font and free resources
+		 * @note Does not free any texts that may still use the font
+		 */
+		~font();
+
 	private:
 		TTF_Font *ttf_font = nullptr;
 	};
