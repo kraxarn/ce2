@@ -8,6 +8,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Options
 option(CE_SYSTEM_LIBS "Use system libraries" OFF)
 
+# Headers
+include_directories(include)
+
 # Project files
 file(GLOB MAIN_SRC "src/*.cpp")
 file(GLOB MAIN_INC "include/ce/*.hpp")
