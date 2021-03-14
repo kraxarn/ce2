@@ -5,7 +5,7 @@
 #include "ce/format.hpp"
 #include "ce/version.hpp"
 
-std::string ce::engine::get_version()
+std::string ce::engine::version()
 {
 	SDL_version version;
 	SDL_GetVersion(&version);

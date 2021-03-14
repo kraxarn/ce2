@@ -16,7 +16,7 @@ namespace ce
 		 * Get version of engine and linked SDL
 		 * @return "crowengine {version} (SDL {version})"
 		 */
-		static std::string get_version();
+		static std::string version();
 
 	private:
 		engine() = default;
