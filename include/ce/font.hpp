@@ -6,7 +6,7 @@
 
 #include "ce/color.hpp"
 
-struct TTF_Font;
+struct _TTF_Font;
 struct SDL_Surface;
 
 namespace ce
@@ -38,6 +38,6 @@ namespace ce
 		SDL_Surface *render_text(const std::string &text, const color &color) const;
 
 	private:
-		TTF_Font *ttf_font = nullptr;
+		_TTF_Font *ttf_font = nullptr;
 	};
 }
