@@ -1,5 +1,7 @@
 #include "ce/color.hpp"
 
+#include <SDL.h>
+
 using namespace ce;
 
 color::color(uint8_t red, uint8_t green, uint8_t blue)
@@ -34,4 +36,11 @@ uint8_t color::get_green() const
 uint8_t color::get_blue() const
 {
 	return blue;
+}
+
+SDL_Color color::to_sdl_color() const
+{
+	return SDL_Color{
+		red, green, blue, 0xff
+	};
 }

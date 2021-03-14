@@ -2,6 +2,8 @@
 
 #include <cstdint>
 
+struct SDL_Color;
+
 namespace ce
 {
 	class color
@@ -40,6 +42,11 @@ namespace ce
 		 * Get the blue component
 		 */
 		uint8_t get_blue() const;
+
+		/**
+		 * Convert to SDL color
+		 */
+		SDL_Color to_sdl_color() const;
 
 	private:
 		uint8_t red;
