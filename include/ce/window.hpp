@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "ce/impl/drawable.hpp"
+
 struct SDL_Window;
 struct SDL_Renderer;
 struct SDL_Texture;
@@ -58,6 +60,14 @@ namespace ce
 		 * @param y Y position
 		 */
 		void render(SDL_Texture *texture, int x, int y);
+
+		/**
+		 * Draw something to the window
+		 * @param drawable Drawable to render
+		 * @param x X position
+		 * @param y Y position
+		 */
+		void render(drawable &drawable, int x, int y);
 
 		/**
 		 * Width

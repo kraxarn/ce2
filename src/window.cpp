@@ -51,6 +51,11 @@ void window::render(SDL_Texture *texture, int x, int y)
 	SDL_RenderCopy(sdl_renderer, texture, nullptr, &dst);
 }
 
+void window::render(ce::drawable &drawable, int x, int y)
+{
+	render(drawable.get_texture(sdl_renderer), x, y);
+}
+
 int window::w()
 {
 	int w;
