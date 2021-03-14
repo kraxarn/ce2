@@ -67,7 +67,7 @@ namespace ce
 		 * @param x X position
 		 * @param y Y position
 		 */
-		void render(drawable &drawable, int x, int y);
+		void render(drawable &drawable);
 
 		/**
 		 * Width
