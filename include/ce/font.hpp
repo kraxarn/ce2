@@ -2,8 +2,12 @@
 
 #include <vector>
 #include <cstdint>
+#include <string>
+
+#include "ce/color.hpp"
 
 struct TTF_Font;
+struct SDL_Surface;
 
 namespace ce
 {
@@ -25,6 +29,13 @@ namespace ce
 		 * @note Does not free any texts that may still use the font
 		 */
 		~font();
+
+		/**
+		 * Render text with font
+		 * @returns Rendered text, or nullptr on failure
+		 * @note Target is responsible for freeing the memory allocated
+		 */
+		SDL_Surface *render_text(const std::string &text, const color &color);
 
 	private:
 		TTF_Font *ttf_font = nullptr;
