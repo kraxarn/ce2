@@ -34,6 +34,7 @@ else ()
 	# Project directories
 	add_subdirectory(thirdparty/SDL)
 	add_subdirectory(thirdparty/SDL_ttf)
-	# Link
-	target_link_libraries(crowengine PRIVATE SDL2 SDL_ttf)
 endif ()
+
+# SDL
+target_link_libraries(crowengine PRIVATE SDL2 SDL_ttf)
