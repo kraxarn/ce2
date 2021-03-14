@@ -70,6 +70,11 @@ int window::h()
 	return h;
 }
 
+bool window::get_running()
+{
+	return running;
+}
+
 SDL_Renderer *window::get_renderer()
 {
 	return sdl_renderer;
@@ -78,4 +83,17 @@ SDL_Renderer *window::get_renderer()
 SDL_Window *window::get_window_handle()
 {
 	return sdl_window;
+}
+
+void window::tick()
+{
+	SDL_Event event;
+	while (SDL_PollEvent(&event))
+	{
+		if (event.type == SDL_QUIT)
+		{
+			running = false;
+			break;
+		}
+	}
 }

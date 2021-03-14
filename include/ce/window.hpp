@@ -80,6 +80,11 @@ namespace ce
 		int h();
 
 		/**
+		 * Game is running
+		 */
+		bool get_running();
+
+		/**
 		 * Get the underlying renderer
 		 */
 		SDL_Renderer *get_renderer();
@@ -89,8 +94,11 @@ namespace ce
 		 */
 		SDL_Window *get_window_handle();
 
+		void tick();
+
 	private:
 		SDL_Window *sdl_window = nullptr;
 		SDL_Renderer *sdl_renderer = nullptr;
+		bool running = true;
 	};
 }
