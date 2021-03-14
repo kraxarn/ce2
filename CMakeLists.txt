@@ -8,14 +8,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Options
 option(CE_SYSTEM_LIBS "Use system libraries" OFF)
 
-# Headers
-include_directories(include)
-
 # Project files
 file(GLOB MAIN_SRC "src/*.cpp")
 file(GLOB MAIN_INC "include/ce/*.hpp")
 file(GLOB SUB_INC "include/ce/*/*.hpp")
 add_library(crowengine STATIC ${MAIN_SRC} ${MAIN_INC} ${SUB_INC})
+
+# Headers
+target_include_directories(crowengine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 # SDL libraries
 if (CE_SYSTEM_LIBS)
