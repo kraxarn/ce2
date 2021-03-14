@@ -51,7 +51,7 @@ namespace ce
 		/**
 		 * Render to screen
 		 */
-		void present();
+		void render();
 
 		/**
 		 * Render texture to window
@@ -59,7 +59,7 @@ namespace ce
 		 * @param x X position
 		 * @param y Y position
 		 */
-		void render(SDL_Texture *texture, int x, int y);
+		void draw(SDL_Texture *texture, int x, int y);
 
 		/**
 		 * Draw something to the window
@@ -67,22 +67,22 @@ namespace ce
 		 * @param x X position
 		 * @param y Y position
 		 */
-		void render(drawable &drawable);
+		void draw(drawable &drawable);
 
 		/**
-		 * Width
+		 * Window width
 		 */
-		int w();
+		int width();
 
 		/**
-		 * Height
+		 * Window height
 		 */
-		int h();
+		int height();
 
 		/**
-		 * Game is running
+		 * Window is open
 		 */
-		bool get_running();
+		bool is_open() const;
 
 		/**
 		 * Get the underlying renderer

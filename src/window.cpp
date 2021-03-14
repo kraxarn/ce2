@@ -36,12 +36,12 @@ bool window::clear(Uint8 r, Uint8 g, Uint8 b)
 	return SDL_RenderClear(sdl_renderer);
 }
 
-void window::present()
+void window::render()
 {
 	SDL_RenderPresent(sdl_renderer);
 }
 
-void window::render(SDL_Texture *texture, int x, int y)
+void window::draw(SDL_Texture *texture, int x, int y)
 {
 	SDL_Rect dst;
 	dst.x = x;
@@ -51,27 +51,27 @@ void window::render(SDL_Texture *texture, int x, int y)
 	SDL_RenderCopy(sdl_renderer, texture, nullptr, &dst);
 }
 
-void window::render(ce::drawable &drawable)
+void window::draw(ce::drawable &drawable)
 {
-	render(drawable.get_texture(sdl_renderer),
+	draw(drawable.get_texture(sdl_renderer),
 		drawable.x, drawable.y);
 }
 
-int window::w()
+int window::width()
 {
 	int w;
 	SDL_GetWindowSize(sdl_window, &w, nullptr);
 	return w;
 }
 
-int window::h()
+int window::height()
 {
 	int h;
 	SDL_GetWindowSize(sdl_window, nullptr, &h);
 	return h;
 }
 
-bool window::get_running()
+bool window::is_open() const
 {
 	return running;
 }
