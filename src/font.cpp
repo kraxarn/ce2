@@ -22,7 +22,7 @@ ce::font::~font()
 		TTF_CloseFont(ttf_font);
 }
 
-SDL_Surface *ce::font::render_text(const std::string &text, const ce::color &color)
+SDL_Surface *ce::font::render_text(const std::string &text, const ce::color &color) const
 {
 	return TTF_RenderText_Solid(ttf_font, text.c_str(), color.to_sdl_color());
 }

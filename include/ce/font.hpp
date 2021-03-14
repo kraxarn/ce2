@@ -35,7 +35,7 @@ namespace ce
 		 * @returns Rendered text, or nullptr on failure
 		 * @note Target is responsible for freeing the memory allocated
 		 */
-		SDL_Surface *render_text(const std::string &text, const color &color);
+		SDL_Surface *render_text(const std::string &text, const color &color) const;
 
 	private:
 		TTF_Font *ttf_font = nullptr;
