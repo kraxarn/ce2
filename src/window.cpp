@@ -16,6 +16,11 @@ window::window(const std::string &title, int x, int y, int w, int h)
 		throw std::runtime_error(SDL_GetError());
 }
 
+window::window(const std::string &title, int w, int h)
+	: window(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, w, h)
+{
+}
+
 window::~window()
 {
 	if (sdl_renderer != nullptr)

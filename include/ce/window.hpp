@@ -25,6 +25,14 @@ namespace ce
 		window(const std::string &title, int x, int y, int w, int h);
 
 		/**
+		 * Create and show a new centered window
+		 * @param title Window title
+		 * @param w Width
+		 * @param h Height
+		 */
+		window(const std::string &title, int w, int h);
+
+		/**
 		 * Destroy window and free resources
 		 */
 		~window();
