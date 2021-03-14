@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 option(CE_SYSTEM_LIBS "Use system libraries" OFF)
 
 # Project files
-file(GLOB MAIN_SRC "src/*/*.cpp")
+file(GLOB MAIN_SRC "src/*.cpp")
 file(GLOB MAIN_INC "include/ce/*.hpp")
 file(GLOB SUB_INC "include/ce/*/*.hpp")
 add_library(crowengine STATIC ${MAIN_SRC} ${MAIN_INC} ${SUB_INC})
