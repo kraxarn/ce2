@@ -25,11 +25,6 @@ window::~window()
 		SDL_DestroyWindow(sdl_window);
 }
 
-SDL_Renderer *window::get_renderer()
-{
-	return sdl_renderer;
-}
-
 bool window::clear(Uint8 r, Uint8 g, Uint8 b)
 {
 	SDL_SetRenderDrawColor(sdl_renderer, r, g, b, 0xff);
@@ -63,4 +58,14 @@ int window::h()
 	int h;
 	SDL_GetWindowSize(sdl_window, nullptr, &h);
 	return h;
+}
+
+SDL_Renderer *window::get_renderer()
+{
+	return sdl_renderer;
+}
+
+SDL_Window *window::get_window_handle()
+{
+	return sdl_window;
 }

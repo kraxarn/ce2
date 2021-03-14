@@ -30,12 +30,6 @@ namespace ce
 		~window();
 
 		/**
-		 * Get SDL Renderer
-		 * @note Shouldn't be needed
-		 */
-		SDL_Renderer *get_renderer();
-
-		/**
 		 * Clear window
 		 * @param r Red
 		 * @param g Green
@@ -66,6 +60,16 @@ namespace ce
 		 * Height
 		 */
 		int h();
+
+		/**
+		 * Get the underlying renderer
+		 */
+		SDL_Renderer *get_renderer();
+
+		/**
+		 * Get the underlying window handle
+		 */
+		SDL_Window *get_window_handle();
 
 	private:
 		SDL_Window *sdl_window = nullptr;
