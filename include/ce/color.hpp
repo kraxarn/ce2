@@ -22,6 +22,11 @@ namespace ce
 		explicit color(uint16_t value);
 
 		/**
+		 * Construct a new black color
+		 */
+		color();
+
+		/**
 		 * Get the red component
 		 */
 		uint8_t get_red() const;

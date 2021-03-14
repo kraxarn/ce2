@@ -10,9 +10,14 @@ color::color(uint8_t red, uint8_t green, uint8_t blue)
 }
 
 color::color(uint16_t value)
-	: red(value & 0b110000),
-	green(value & 0b001100),
-	blue(value & 0b000011)
+	: red(value & 0xff0000),
+	green(value & 0x00ff00),
+	blue(value & 0x0000ff)
+{
+}
+
+color::color()
+	: color(0x0, 0x0, 0x0)
 {
 }
 
