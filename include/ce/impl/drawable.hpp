@@ -1,6 +1,7 @@
 #pragma once
 
 struct SDL_Texture;
+struct SDL_Renderer;
 
 namespace ce
 {
@@ -13,7 +14,7 @@ namespace ce
 		/**
 		 * Get drawable texture
 		 */
-		virtual SDL_Texture *get_texture() = 0;
+		virtual SDL_Texture *get_texture(SDL_Renderer *renderer) = 0;
 
 	protected:
 		drawable() = default;
