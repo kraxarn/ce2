@@ -7,16 +7,18 @@
 namespace ce
 {
 	/**
-	 * Engine
-	 * @note Will be embedded into window soon-ish
+	 * Engine utilities
 	 */
 	class engine
 	{
 	public:
-		engine();
-
+		/**
+		 * Get version of engine and linked SDL
+		 * @return "crowengine {version} (SDL {version})"
+		 */
 		static std::string get_version();
 
-		~engine();
+	private:
+		engine() = default;
 	};
 }

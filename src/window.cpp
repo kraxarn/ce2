@@ -1,11 +1,23 @@
 #include "ce/window.hpp"
 
 #include <SDL.h>
+#include <SDL_ttf.h>
 
 using namespace ce;
 
+int window::window_count = 0;
+
 window::window(const std::string &title, int x, int y, int w, int h)
 {
+	if (window_count++ <= 0)
+	{
+		if (SDL_Init(SDL_INIT_VIDEO) != 0)
+			throw std::runtime_error(SDL_GetError());
+
+		if (TTF_Init() != 0)
+			throw std::runtime_error(TTF_GetError());
+	}
+
 	sdl_window = SDL_CreateWindow(title.c_str(), x, y, w, h, SDL_WINDOW_SHOWN);
 	if (sdl_window == nullptr)
 		throw std::runtime_error(SDL_GetError());
@@ -28,6 +40,12 @@ window::~window()
 
 	if (sdl_window != nullptr)
 		SDL_DestroyWindow(sdl_window);
+
+	if (--window_count <= 0)
+	{
+		TTF_Quit();
+		SDL_Quit();
+	}
 }
 
 bool window::clear(Uint8 r, Uint8 g, Uint8 b)

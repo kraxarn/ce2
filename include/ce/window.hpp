@@ -100,5 +100,6 @@ namespace ce
 		SDL_Window *sdl_window = nullptr;
 		SDL_Renderer *sdl_renderer = nullptr;
 		bool running = true;
+		static int window_count;
 	};
 }
