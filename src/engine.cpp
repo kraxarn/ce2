@@ -3,6 +3,9 @@
 #include <SDL.h>
 #include <SDL_ttf.h>
 
+#include "ce/format.hpp"
+#include "ce/version.hpp"
+
 ce::engine::engine()
 {
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
@@ -23,13 +26,7 @@ std::string ce::engine::get_version()
 	SDL_version version;
 	SDL_GetVersion(&version);
 
-	std::stringstream ss;
-
-	// CrowEngine current has no version
-	ss << "crowengine v1.0.0 (SDL "
-		<< std::to_string(version.major) << "."
-		<< std::to_string(version.minor) << "."
-		<< std::to_string(version.patch) << ")";
-
-	return ss.str();
+	return fmt::format("CrowEngine {} (SDL {}.{}.{})",
+		CE_VERSION_STR,
+		version.major, version.minor, version.patch);
 }
